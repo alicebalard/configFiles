@@ -1,0 +1,17 @@
+Is there a way to version ~/.bashrc in-place by git, without copying to a different repo?
+
+You can create a repo in another directory, and then use a symbolic link in your home directory (~) to point to the new file.
+
+mkdir -p ~/path/to/repo
+mv ~/.bashrc ~/path/to/repo/
+
+cd ~
+ln -s ~/path/to/repo/.bashrc .bashrc
+
+cd ~/path/to/repo
+# edit .bashrc
+git init
+git add .bashrc
+git commit -m "Initial commit"
+
+This way, you have a plain repository that contains only the files you want to version control, and the rest of your system uses ~/.bashrc as before, transparently following the link to the version controlled file. No .gitignore or shell aliases needed.
