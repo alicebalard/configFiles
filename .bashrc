@@ -12,6 +12,7 @@ export PATH=/home/alice/bin:/usr/local/bin:/usr/bin:/bin:/home/alice/anaconda3/b
 
 # User specific aliases and functions
 alias ll='ls -lh'
+alias gogit='cd /home/alice/Sync/pro/Git/'
 
 # enable keychain ssh passphrase memory
 ##eval `keychain --eval --nogui -Q -q id_rsa`
